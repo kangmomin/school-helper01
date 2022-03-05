@@ -12,21 +12,22 @@ type logger struct {
 }
 
 var once sync.Once
-var Logger = setLogger()
+var Logger = getLogger()
 
-func setLogger() *logger {
+func getLogger() *logger {
 	var logger *logger
 	once.Do(func() {
-		file, err := os.OpenFile("./log/err.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0777)
-
-		if err != nil {
-			panic(err)
-		}
-
-		log.SetOutput(file)
-
-		logger.fileName = file.Name()
-		logger.Logger = log.New(file, "school helper: ", log.Ldate|log.Ltime|log.Lshortfile)
+		logger = setLogger("./log/err.log")
 	})
 	return logger
+}
+
+func setLogger(filePath string) *logger {
+	file, _ := os.OpenFile(filePath, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0777)
+
+	log.SetOutput(file)
+	return &logger{
+		fileName: file.Name(),
+		Logger:   log.New(file, "school-helper: ", log.Ldate|log.Ltime|log.Lshortfile),
+	}
 }
