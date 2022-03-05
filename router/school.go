@@ -17,11 +17,11 @@ func SchoolRouter(res *discordgo.Session, req *discordgo.MessageCreate, cmd []st
 		addSchool(res, req, cmd)
 	}
 	if cmd[1] == "급식" {
-		callCafeteria(res, req)
+		callLunch(res, req)
 	}
 }
 
-func callCafeteria(res *discordgo.Session, req *discordgo.MessageCreate) {
+func callLunch(res *discordgo.Session, req *discordgo.MessageCreate) {
 
 }
 
