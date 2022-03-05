@@ -78,7 +78,7 @@ func addSchool(res *discordgo.Session, req *discordgo.MessageCreate, cmd []strin
 		return
 	}
 
-	if len(body.SchoolInfo) > 2 || len(body.SchoolInfo[0].Row) > 1 {
+	if len(body.SchoolInfo) > 2 || len(body.SchoolInfo[1].Row) > 1 {
 		res.ChannelMessageSend(req.ChannelID, "특정 학교를 찾을 수 없습니다.\n더 자세한 이름을 적어주세요.")
 		return
 	}
