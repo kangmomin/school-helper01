@@ -9,21 +9,28 @@ import (
 	"syscall"
 
 	"github.com/bwmarrin/discordgo"
+	"github.com/joho/godotenv"
 )
 
-var Tocken = os.Getenv("TOCKEN")
-
 func main() {
+	err := godotenv.Load(".env")
+	if err != nil {
+		log.Fatalln(err)
+		fmt.Println(err)
+		return
+	}
+
+	Tocken := os.Getenv("TOCKEN")
 	sc := make(chan os.Signal, 1)
 
-	client, err := discordgo.New("BOT" + Tocken)
-	defer client.Close()
+	client, err := discordgo.New("Bot " + Tocken)
 
 	if err != nil {
 		log.Fatalln(err)
 		fmt.Println(err)
 		return
 	}
+	defer client.Close()
 
 	//route
 	client.AddHandler(router.Route)
