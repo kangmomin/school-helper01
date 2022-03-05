@@ -8,6 +8,7 @@ import (
 	"os"
 	"schoolHelper/structure"
 	"schoolHelper/util"
+	"time"
 
 	"github.com/bwmarrin/discordgo"
 )
@@ -26,14 +27,35 @@ func callLunch(res *discordgo.Session, req *discordgo.MessageCreate) {
 	util.GetUserData(&userInfoes)
 
 	// 유저(커맨드 작성자)의 아이디 위치
-	idx := 0
-	for idx < len(userInfoes) {
-		if userInfoes[idx].UserId == req.Author.ID {
-			break
-		}
-		idx++
+	idx, isFind := util.FindUser(userInfoes, req.Author.ID)
+	if !isFind {
+		res.ChannelMessageSend(req.ChannelID, "아직 학교가 등록되지 않았습니다. !학교 등록")
+		return
 	}
 
+	date := time.Now().Format("20060102")
+	reqPath := "https://open.neis.go.kr/hub/mealServiceDietInfo?Type=json&MLSV_YMD=" + date + "&ATPT_OFCDC_SC_CODE=" + url.QueryEscape(userInfoes[idx].AtptOfcdcScCode) + "&SD_SCHUL_CODE=" + url.QueryEscape(userInfoes[idx].SchoolCode) // url파싱이 자동으로 안되서 미리 함
+	resp, err := http.Get(reqPath)
+	if err != nil {
+		util.ErrProcesser("api가 응답하지 않습니다.", err, res, req)
+		return
+	}
+
+	var data structure.Lunch
+	byteValue, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		util.ErrProcesser("api가 응답하지 않습니다.", err, res, req)
+		return
+	}
+
+	json.Unmarshal(byteValue, &data)
+
+	if len(data.MealServiceDietInfo) < 1 {
+		res.ChannelMessageSend(req.ChannelID, "오늘은 급식이 없습니다.")
+		return
+	}
+
+	res.ChannelMessageSend(req.ChannelID, data.MealServiceDietInfo[0].Row[0].DdishNm)
 }
 
 func addSchool(res *discordgo.Session, req *discordgo.MessageCreate, cmd []string) {
@@ -69,6 +91,12 @@ func addSchool(res *discordgo.Session, req *discordgo.MessageCreate, cmd []strin
 	err = util.GetUserData(&userInfoes)
 	if err != nil {
 		util.ErrProcesser("유저의 정보를 불러오지 못했습니다.", err, res, req)
+		return
+	}
+
+	_, isFind := util.FindUser(userInfoes, req.Author.ID)
+	if isFind {
+		res.ChannelMessageSend(req.ChannelID, "이미 등록된 학교가 있습니다.")
 		return
 	}
 
