@@ -27,8 +27,6 @@ func main() {
 
 	if err != nil {
 		log.Fatalln(err)
-		fmt.Println(err)
-		return
 	}
 	defer client.Close()
 
