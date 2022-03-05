@@ -22,6 +22,17 @@ func SchoolRouter(res *discordgo.Session, req *discordgo.MessageCreate, cmd []st
 }
 
 func callLunch(res *discordgo.Session, req *discordgo.MessageCreate) {
+	var userInfoes []structure.User
+	util.GetUserData(&userInfoes)
+
+	// 유저(커맨드 작성자)의 아이디 위치
+	idx := 0
+	for idx < len(userInfoes) {
+		if userInfoes[idx].UserId == req.Author.ID {
+			break
+		}
+		idx++
+	}
 
 }
 
@@ -63,6 +74,7 @@ func addSchool(res *discordgo.Session, req *discordgo.MessageCreate, cmd []strin
 
 	// 유저 정보 업데이트
 	addSchoolInfo.SchoolCode = body.SchoolInfo[1].Row[0].SdSchulCode
+	addSchoolInfo.AtptOfcdcScCode = body.SchoolInfo[1].Row[0].AtptOfcdcScCode
 	addSchoolInfo.UserId = req.Author.ID
 
 	userInfoes = append(userInfoes, addSchoolInfo)
