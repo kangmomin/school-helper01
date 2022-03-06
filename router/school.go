@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"regexp"
 	"schoolHelper/structure"
 	"schoolHelper/util"
 	"strings"
@@ -57,8 +58,9 @@ func callLunch(res *discordgo.Session, req *discordgo.MessageCreate) {
 	}
 
 	// menu string data parse
-	menu := strings.ReplaceAll(data.MealServiceDietInfo[0].Row[0].DdishNm, ".", "")
-	menu = strings.ReplaceAll(menu, "/^[1-9][0-9]*$/", "")
+	menu := strings.ReplaceAll(data.MealServiceDietInfo[1].Row[0].DdishNm, ".", "")
+	reg := regexp.MustCompile("[0-9]+")
+	menu = reg.ReplaceAllString(menu, "")
 	menu = strings.ReplaceAll(menu, " ", "")
 	menu = strings.ReplaceAll(menu, ":", "")
 	menuList := strings.Split(menu, "<br/>")
@@ -66,14 +68,14 @@ func callLunch(res *discordgo.Session, req *discordgo.MessageCreate) {
 	// make embed message
 	embed := embed.NewEmbed()
 	embed.SetTitle(date.Format("2006-01-02") + "일")
-	embed.SetDescription(data.MealServiceDietInfo[0].Row[0].SchulNm)
-	for idx := range menuList {
-		if len(menuList) < idx*3+2 {
-			break
-		}
+	embed.SetDescription(data.MealServiceDietInfo[1].Row[0].SchulNm)
 
-		embed.AddField(menuList[idx*3], menuList[idx*3+1]+"\n"+menuList[idx*3+2])
+	// menu list string version
+	var menuListUp string
+	for idx := 0; idx < len(menuList); idx++ {
+		menuListUp += "\n" + menuList[idx]
 	}
+	embed = embed.AddField("중식", menuListUp)
 
 	embed.InlineAllFields().
 		Truncate().
