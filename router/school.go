@@ -86,6 +86,9 @@ func callLunch(res *discordgo.Session, req *discordgo.MessageCreate) {
 
 func addSchool(res *discordgo.Session, req *discordgo.MessageCreate, cmd []string) {
 	// 학교 등록 학교명
+	if len(cmd) < 2 {
+		return
+	}
 	schoolName := cmd[2]
 	reqPath := "https://open.neis.go.kr/hub/schoolInfo?Type=json&pSize=3&SCHUL_NM=" + url.QueryEscape(schoolName) // url파싱이 자동으로 안되서 미리 함
 	resp, err := http.Get(reqPath)

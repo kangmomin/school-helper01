@@ -12,7 +12,7 @@ func Route(res *discordgo.Session, req *discordgo.MessageCreate) {
 	}
 
 	// 만약 !로 시작하지 않는다면(cmd가 아니면) return
-	if cmd := strings.Split(req.Content, ""); cmd[0] != "!" {
+	if cmd := strings.Split(req.Content, ""); len(req.Content) < 2 || cmd[0] != "!" {
 		return
 	}
 
