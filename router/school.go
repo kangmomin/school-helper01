@@ -8,8 +8,10 @@ import (
 	"os"
 	"schoolHelper/structure"
 	"schoolHelper/util"
+	"strings"
 	"time"
 
+	embed "github.com/Clinet/discordgo-embed"
 	"github.com/bwmarrin/discordgo"
 )
 
@@ -33,8 +35,8 @@ func callLunch(res *discordgo.Session, req *discordgo.MessageCreate) {
 		return
 	}
 
-	date := time.Now().Format("20060102")
-	reqPath := "https://open.neis.go.kr/hub/mealServiceDietInfo?Type=json&MLSV_YMD=" + date + "&ATPT_OFCDC_SC_CODE=" + url.QueryEscape(userInfoes[idx].AtptOfcdcScCode) + "&SD_SCHUL_CODE=" + url.QueryEscape(userInfoes[idx].SchoolCode) // url파싱이 자동으로 안되서 미리 함
+	date := time.Now()
+	reqPath := "https://open.neis.go.kr/hub/mealServiceDietInfo?Type=json&MLSV_YMD=" + date.Format("20060102") + "&ATPT_OFCDC_SC_CODE=" + url.QueryEscape(userInfoes[idx].AtptOfcdcScCode) + "&SD_SCHUL_CODE=" + url.QueryEscape(userInfoes[idx].SchoolCode) // url파싱이 자동으로 안되서 미리 함
 	resp, err := http.Get(reqPath)
 	if err != nil {
 		util.ErrProcesser("api가 응답하지 않습니다.", err, res, req)
@@ -49,13 +51,35 @@ func callLunch(res *discordgo.Session, req *discordgo.MessageCreate) {
 	}
 
 	json.Unmarshal(byteValue, &data)
-
 	if len(data.MealServiceDietInfo) < 1 {
 		res.ChannelMessageSend(req.ChannelID, "오늘은 급식이 없습니다.")
 		return
 	}
 
-	res.ChannelMessageSend(req.ChannelID, data.MealServiceDietInfo[0].Row[0].DdishNm)
+	// menu string data parse
+	menu := strings.ReplaceAll(data.MealServiceDietInfo[0].Row[0].DdishNm, ".", "")
+	menu = strings.ReplaceAll(menu, "/^[1-9][0-9]*$/", "")
+	menu = strings.ReplaceAll(menu, " ", "")
+	menu = strings.ReplaceAll(menu, ":", "")
+	menuList := strings.Split(menu, "<br/>")
+
+	// make embed message
+	embed := embed.NewEmbed()
+	embed.SetTitle(date.Format("2006-01-02") + "일")
+	embed.SetDescription(data.MealServiceDietInfo[0].Row[0].SchulNm)
+	for idx := range menuList {
+		if len(menuList) < idx*3+2 {
+			break
+		}
+
+		embed.AddField(menuList[idx*3], menuList[idx*3+1]+"\n"+menuList[idx*3+2])
+	}
+
+	embed.InlineAllFields().
+		Truncate().
+		SetColor(0x7FD5E9)
+
+	res.ChannelMessageSendEmbed(req.ChannelID, embed.MessageEmbed)
 }
 
 func addSchool(res *discordgo.Session, req *discordgo.MessageCreate, cmd []string) {
