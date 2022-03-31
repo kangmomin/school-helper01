@@ -37,6 +37,9 @@ func callLunch(res *discordgo.Session, req *discordgo.MessageCreate) {
 	}
 
 	date := time.Now()
+	if date.Hour() > 12 {
+		date = date.AddDate(0, 0, 1)
+	}
 	reqPath := "https://open.neis.go.kr/hub/mealServiceDietInfo?Type=json&MLSV_YMD=" + date.Format("20060102") + "&ATPT_OFCDC_SC_CODE=" + url.QueryEscape(userInfoes[idx].AtptOfcdcScCode) + "&SD_SCHUL_CODE=" + url.QueryEscape(userInfoes[idx].SchoolCode) // url파싱이 자동으로 안되서 미리 함
 	resp, err := http.Get(reqPath)
 	if err != nil {
