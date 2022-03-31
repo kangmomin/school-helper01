@@ -1,6 +1,6 @@
 module schoolHelper
 
-go 1.17
+go 1.18
 
 require (
 	github.com/Clinet/discordgo-embed v0.0.0-20220113222025-bafe0c917646
