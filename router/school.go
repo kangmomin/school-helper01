@@ -23,6 +23,9 @@ func SchoolRouter(res *discordgo.Session, req *discordgo.MessageCreate, cmd []st
 	if cmd[1] == "급식" {
 		callLunch(res, req)
 	}
+	if cmd[1] == "취소" {
+		deleteSchool(res, req, cmd)
+	}
 }
 
 func callLunch(res *discordgo.Session, req *discordgo.MessageCreate) {
@@ -111,7 +114,7 @@ func addSchool(res *discordgo.Session, req *discordgo.MessageCreate, cmd []strin
 	}
 
 	if len(body.SchoolInfo) > 2 || len(body.SchoolInfo[1].Row) > 1 {
-		res.ChannelMessageSend(req.ChannelID, "특정 학교를 찾을 수 없습니다.\n더 자세한 이름을 적어주세요.")
+		res.ChannelMessageSend(req.ChannelID, "특정 학교를 찾을 수 없습니다.\n더 자세한 이름을 적어주십시오.\n띄어쓰기는 빼주십시오.")
 		return
 	}
 	defer resp.Body.Close()
@@ -147,4 +150,35 @@ func addSchool(res *discordgo.Session, req *discordgo.MessageCreate, cmd []strin
 
 	res.ChannelMessageSend(req.ChannelID, "등록을 완료했습니다. "+body.SchoolInfo[1].Row[0].AtptOfcdcScNm+" "+body.SchoolInfo[1].Row[0].SchulNm)
 	os.WriteFile("./data/user.json", jsonData, 0644)
+}
+
+func deleteSchool(res *discordgo.Session, req *discordgo.MessageCreate, cmd []string) {
+	if len(cmd) < 2 {
+		return
+	}
+
+	file, err := os.Open("./data/user.json")
+	if err != nil {
+		util.ErrProcesser("유저 정보를 가저오지 못하였습니다.", err, res, req)
+	}
+
+	byteValue, err := ioutil.ReadAll(file)
+	if err != nil {
+		util.ErrProcesser("유저 정보를 가저오지 못하였습니다.", err, res, req)
+	}
+
+	var users []structure.User
+
+	json.Unmarshal(byteValue, &users)
+	for i := 0; i < len(users); i++ {
+		if users[i].UserId == req.Author.ID {
+			users = append(users[:i], users[i+1:]...)
+			data, _ := json.Marshal(users)
+			ioutil.WriteFile("./data/user.json", data, 0644)
+			res.ChannelMessageSend(req.ChannelID, "등록 되어있던 학교를 취소하였습니다.")
+			break
+		}
+	}
+
+	res.ChannelMessageSend(req.ChannelID, "아직 학교가 등록되지 않았습니다. !학교 등록")
 }
