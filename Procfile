@@ -1,1 +1,1 @@
-worker: go run index.js
+worker: go run index.go
