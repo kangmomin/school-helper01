@@ -1,6 +1,7 @@
 package logger
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"sync"
@@ -26,7 +27,7 @@ func setLogger(filePath string) *logger {
 	file, err := os.OpenFile(filePath, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0777)
 
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 
 	log.SetOutput(file)
