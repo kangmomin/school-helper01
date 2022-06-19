@@ -1,1 +1,1 @@
-web: bin/SchoolHelper0
+web: bin/SchoolHelper
