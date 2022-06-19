@@ -33,4 +33,11 @@ func Route(res *discordgo.Session, req *discordgo.MessageCreate) {
 	if cmd[0] == "학교" {
 		SchoolRouter(res, req, cmd)
 	}
+	if cmd[1] == "설명" {
+		w.ChannelMessageSend(r.ChannelID, `
+!학교 등록 [자신의 학교]: 자기 자신의 학교를 등록한다.
+!학교 급식: 등록된 학교의 급식을 보여준다.
+!학교 취소: 등록된 학교를 취소한다.
+`)
+	}
 }
