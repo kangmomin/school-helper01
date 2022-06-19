@@ -1,1 +1,1 @@
-worker: index.go
+web: bin/SchoolHelper0
