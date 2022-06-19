@@ -41,7 +41,14 @@ func main() {
 		log.Println(err)
 		return
 	}
-
+	setActivity(client)
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
 	<-sc
+}
+
+func setActivity(s *discordgo.Session) {
+	err := s.UpdateListeningStatus("!설명")
+	if err != nil {
+		panic(err)
+	}
 }
