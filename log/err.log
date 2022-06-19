@@ -1,0 +1,99 @@
+school-helper: 2022/03/05 18:00:59 school.go:51: {"RESULT":{"CODE":"INFO-200","MESSAGE":"해당하는 데이터가 없습니다."}}
+school-helper: 2022/03/05 18:02:06 school.go:51: {"RESULT":{"CODE":"INFO-200","MESSAGE":"해당하는 데이터가 없습니다."}}
+school-helper: 2022/03/05 18:17:17 school.go:46: <nil>
+school-helper: 2022/03/06 03:23:27 school.go:28: <nil>
+school-helper: 2022/03/06 03:24:52 school.go:28: <nil>
+school-helper: 2022/03/06 03:26:03 school.go:28: <nil>
+school-helper: 2022/03/06 03:26:10 school.go:28: <nil>
+2022/03/09 22:40:30 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, dial tcp 10.0.0.253:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+2022/03/09 22:40:31 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, dial tcp 10.0.0.253:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+2022/03/09 22:40:43 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/09 22:40:45 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/09 22:40:49 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/09 22:40:57 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/09 22:41:13 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/16 21:50:32 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, dial tcp: lookup gateway.discord.gg: no such host
+2022/03/16 21:50:33 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, dial tcp: lookup gateway.discord.gg: no such host
+2022/03/16 21:50:34 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/16 21:50:36 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/16 21:50:40 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/16 21:50:48 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/16 21:51:04 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/20 17:17:08 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, dial tcp: lookup gateway.discord.gg: no such host
+2022/03/20 17:17:08 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, dial tcp: lookup gateway.discord.gg: no such host
+2022/03/20 17:17:09 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/20 17:17:11 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/20 17:17:15 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/20 17:17:23 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 06:23:10 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, dial tcp: lookup gateway.discord.gg: no such host
+2022/03/21 06:23:14 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, dial tcp: lookup gateway.discord.gg: no such host
+2022/03/21 06:23:15 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 06:23:17 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 06:23:21 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 06:23:29 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 07:06:10 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, dial tcp: lookup gateway.discord.gg: no such host
+2022/03/21 07:06:10 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, dial tcp: lookup gateway.discord.gg: no such host
+2022/03/21 16:12:40 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 16:12:42 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 16:12:46 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 21:18:19 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, dial tcp: lookup gateway.discord.gg: no such host
+2022/03/21 21:18:19 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, dial tcp: lookup gateway.discord.gg: no such host
+2022/03/21 21:18:20 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 21:18:22 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 21:18:26 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 21:35:49 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, dial tcp: lookup gateway.discord.gg: no such host
+2022/03/21 21:35:49 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, dial tcp: lookup gateway.discord.gg: no such host
+2022/03/21 21:35:50 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 21:35:52 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 21:35:56 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 21:36:04 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 21:36:20 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 21:36:52 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 21:37:56 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/21 21:40:04 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/25 16:01:28 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, websocket: bad handshake
+2022/03/25 16:01:29 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, websocket: bad handshake
+2022/03/25 16:01:40 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, websocket: bad handshake
+2022/03/25 16:01:40 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, websocket: bad handshake
+2022/03/25 16:01:52 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, websocket: bad handshake
+2022/03/25 16:01:52 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, websocket: bad handshake
+2022/03/25 16:02:06 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, websocket: bad handshake
+2022/03/25 16:02:06 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, websocket: bad handshake
+2022/03/25 16:02:24 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, websocket: bad handshake
+2022/03/25 16:02:24 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, websocket: bad handshake
+2022/03/29 00:33:53 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, dial tcp: lookup gateway.discord.gg: no such host
+2022/03/29 00:33:54 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, dial tcp: lookup gateway.discord.gg: no such host
+2022/03/29 00:33:55 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/29 00:34:08 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/29 00:34:12 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/29 00:34:20 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/29 00:34:36 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/03/29 00:35:08 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/04/07 09:17:51 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, dial tcp: lookup gateway.discord.gg: no such host
+2022/04/07 10:19:59 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, dial tcp: lookup gateway.discord.gg: no such host
+2022/04/07 10:20:00 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/04/13 02:14:55 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, dial tcp: lookup gateway.discord.gg: no such host
+2022/04/13 22:36:23 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, dial tcp: lookup gateway.discord.gg: no such host
+2022/04/13 22:36:24 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/04/13 22:36:26 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/04/13 22:36:30 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/05/11 22:41:48 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, dial tcp: lookup gateway.discord.gg: no such host
+2022/05/11 22:41:52 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, dial tcp: lookup gateway.discord.gg: no such host
+2022/05/11 22:41:53 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/05/16 23:47:30 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, dial tcp: lookup gateway.discord.gg: no such host
+2022/05/16 23:47:31 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, dial tcp: lookup gateway.discord.gg: no such host
+2022/05/16 23:47:32 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/05/16 23:47:45 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/05/16 23:48:00 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/05/16 23:48:08 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/05/16 23:48:24 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/05/16 23:49:07 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/05/16 23:53:12 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, dial tcp: lookup gateway.discord.gg: no such host
+2022/05/16 23:53:12 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, dial tcp: lookup gateway.discord.gg: no such host
+2022/05/16 23:53:13 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, Get "https://discord.com/api/v9/gateway": dial tcp: lookup discord.com: no such host
+2022/05/21 05:48:11 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, websocket: bad handshake
+2022/05/21 05:48:14 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, websocket: bad handshake
+2022/05/23 23:58:12 websocket: close 4004: Authentication failed.
+2022/05/23 23:58:19 websocket: close 4004: Authentication failed.
+2022/05/27 15:20:03 [DG0] wsapi.go:82:Open() error connecting to gateway wss://gateway.discord.gg/?v=9&encoding=json, EOF
+2022/05/27 15:20:03 [DG0] wsapi.go:846:reconnect() error reconnecting to gateway, EOF
